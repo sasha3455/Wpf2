@@ -1,0 +1,46 @@
+﻿<Window x:Class="UserManagementApp.RolesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление ролями" Height="450" Width="600"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="MinWidth" Value="80"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5,5,5,2"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Управление ролями" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="RoleNameTextBox" Width="200" Margin="5"/>
+                <Button x:Name="AddRoleButton" Content="Добавить" Margin="5" Click="AddRoleButton_Click"/>
+                <Button x:Name="UpdateRoleButton" Content="Обновить" Margin="5" Click="UpdateRoleButton_Click"/>
+                <Button x:Name="DeleteRoleButton" Content="Удалить" Margin="5" Click="DeleteRoleButton_Click"/>
+                <Button x:Name="BackButton" Content="Назад" Margin="5" Click="BackButton_Click"/>
+            </StackPanel>
+        </GroupBox>
+
+        <DataGrid x:Name="RolesDataGrid" Grid.Row="1" Margin="0" 
+                  AutoGenerateColumns="False" SelectionChanged="RolesDataGrid_SelectionChanged"
+                  IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding RoleID}" Width="50"/>
+                <DataGridTextColumn Header="Название роли" Binding="{Binding Role_name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

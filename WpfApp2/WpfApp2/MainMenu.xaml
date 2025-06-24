@@ -1,0 +1,13 @@
+﻿<Window x:Class="UserManagementApp.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление пользователями" Height="250" Width="300">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="UsersButton" Content="Управление пользователями" 
+                    Height="40" Width="200" Margin="5" Click="UsersButton_Click"/>
+            <Button x:Name="RolesButton" Content="Управление ролями" 
+                    Height="40" Width="200" Margin="5" Click="RolesButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
